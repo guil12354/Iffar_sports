@@ -1,0 +1,1729 @@
+/* ================================================================
+   IFFAR SPORTS
+   Arquivo principal de estilos
+   ================================================================ */
+
+
+/* ----------------------------------------------------------------
+   1. VARIÁVEIS GERAIS
+   ---------------------------------------------------------------- */
+
+:root {
+
+    --verde-principal: #005126;
+    --verde-escuro: #003d1c;
+    --verde-muito-escuro: #002e16;
+
+    --laranja: #f5a623;
+    --laranja-claro: #ffb83d;
+
+    --fundo: #f2f4f3;
+    --branco: #ffffff;
+
+    --texto: #202622;
+    --texto-suave: #6f7772;
+
+    --borda: #dce2de;
+
+    --sombra:
+        0 10px 35px rgba(0, 0, 0, 0.10);
+
+}
+
+
+/* ================================================================
+   2. CONFIGURAÇÕES GERAIS
+   ================================================================ */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+
+    margin: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            #eef1ef 0%,
+            #f8f9f8 100%
+        );
+
+    color: var(--texto);
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+    min-height: 100vh;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    transition:
+        color 0.2s ease,
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        opacity 0.2s ease,
+        transform 0.2s ease;
+}
+
+.conteudo-principal {
+    min-height: 70vh;
+}
+
+
+/* ================================================================
+   3. NAVBAR DESKTOP
+   ================================================================ */
+
+.navbar-principal {
+
+    min-height: 76px;
+
+    display: flex;
+    align-items: stretch;
+
+    background: var(--verde-principal);
+
+    border-bottom: 4px solid var(--laranja);
+
+    position: relative;
+    z-index: 1000;
+
+}
+
+
+/* Logo */
+
+.nav-logo {
+
+    width: 185px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 5px 14px;
+
+    background: #064928;
+}
+
+.nav-logo img {
+
+    max-height: 62px;
+    max-width: 155px;
+
+    object-fit: contain;
+}
+
+
+/* Links */
+
+.nav-links {
+
+    display: flex;
+    align-items: stretch;
+}
+
+.nav-item-principal {
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    padding: 0 22px;
+
+    color: var(--branco);
+
+    text-decoration: none;
+
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+
+.nav-item-principal i {
+    font-size: 1.45rem;
+}
+
+.nav-item-principal:hover {
+
+    color: var(--branco);
+
+    background: rgba(0, 0, 0, 0.12);
+}
+
+.nav-item-principal.ativo {
+    background: var(--verde-escuro);
+}
+
+.nav-item-principal.ativo::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 20%;
+    right: 20%;
+    bottom: 0;
+
+    height: 4px;
+
+    background: var(--laranja);
+}
+
+
+/* Login */
+
+.nav-login {
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 18px;
+}
+
+.nav-login a {
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: var(--branco);
+
+    text-decoration: none;
+
+    line-height: 1.15;
+
+    font-size: 0.92rem;
+}
+
+.nav-login i {
+
+    font-size: 2.5rem;
+}
+
+.nav-login a:hover i {
+    transform: scale(1.07);
+}
+
+
+/* ================================================================
+   4. CABEÇALHO MOBILE
+   ================================================================ */
+
+.cabecalho-mobile {
+
+    height: 72px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--verde-principal);
+
+    border-bottom: 3px solid var(--laranja);
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+}
+
+.cabecalho-mobile img {
+
+    max-height: 58px;
+    max-width: 155px;
+
+    object-fit: contain;
+}
+
+
+/* ================================================================
+   5. NAVEGAÇÃO INFERIOR MOBILE
+   ================================================================ */
+
+.nav-mobile {
+
+    position: fixed;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 68px;
+
+    display: flex;
+
+    background: rgba(0, 69, 32, 0.98);
+
+    border-top: 2px solid var(--laranja);
+
+    box-shadow:
+        0 -4px 18px rgba(0, 0, 0, 0.14);
+
+    z-index: 2000;
+}
+
+.nav-mobile a {
+
+    position: relative;
+
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 2px;
+
+    color: rgba(255, 255, 255, 0.75);
+
+    text-decoration: none;
+
+    font-size: 0.73rem;
+}
+
+.nav-mobile i {
+    font-size: 1.45rem;
+}
+
+.nav-mobile a.ativo {
+
+    color: var(--branco);
+
+    background: rgba(0, 0, 0, 0.12);
+}
+
+.nav-mobile a.ativo::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    width: 34px;
+    height: 3px;
+
+    border-radius: 0 0 3px 3px;
+
+    background: var(--laranja);
+}
+
+
+/* ================================================================
+   6. TÍTULOS E CABEÇALHOS INTERNOS
+   ================================================================ */
+
+.mini-titulo {
+
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: var(--laranja);
+
+    font-size: 0.76rem;
+    font-weight: 800;
+
+    letter-spacing: 0.13em;
+}
+
+.titulo-pagina {
+
+    margin: 0;
+
+    color: var(--verde-principal);
+
+    font-weight: 750;
+}
+
+.subtitulo-pagina {
+
+    margin: 6px 0 0;
+
+    color: var(--texto-suave);
+}
+
+.cabecalho-secao {
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.cabecalho-secao h1 {
+
+    margin: 0;
+
+    color: var(--verde-principal);
+
+    font-size: clamp(1.7rem, 3vw, 2.4rem);
+
+    font-weight: 750;
+}
+
+.link-ver-todas {
+
+    color: var(--verde-principal);
+
+    text-decoration: none;
+
+    font-weight: 600;
+}
+
+.link-ver-todas:hover {
+    color: var(--laranja);
+}
+
+
+/* ================================================================
+   7. HOME
+   ================================================================ */
+
+.home {
+    min-height: 650px;
+}
+
+
+/* ================================================================
+   8. CARDS DAS NOTÍCIAS DA HOME
+   ================================================================ */
+
+.noticia-card {
+
+    position: relative;
+
+    display: block;
+
+    width: 100%;
+
+    overflow: hidden;
+
+    border-radius: 12px;
+
+    background: #222;
+
+    box-shadow: var(--sombra);
+
+    color: var(--branco);
+
+    text-decoration: none;
+}
+
+.noticia-card img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.45s ease,
+        filter 0.45s ease;
+}
+
+.noticia-card:hover img {
+
+    transform: scale(1.035);
+
+    filter: brightness(0.88);
+}
+
+.noticia-destaque {
+    height: 430px;
+}
+
+.noticia-secundaria {
+    height: 203px;
+}
+
+.noticia-overlay {
+
+    position: absolute;
+
+    inset:
+        auto
+        0
+        0
+        0;
+
+    padding:
+        55px
+        22px
+        20px;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.88) 0%,
+            rgba(0, 0, 0, 0.54) 54%,
+            rgba(0, 0, 0, 0) 100%
+        );
+}
+
+.noticia-categoria {
+
+    display: inline-block;
+
+    margin-bottom: 8px;
+
+    padding:
+        4px
+        9px;
+
+    border-radius: 20px;
+
+    background: var(--laranja);
+
+    color: #251a00;
+
+    font-size: 0.69rem;
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.04em;
+}
+
+.noticia-data {
+
+    margin-bottom: 1px;
+
+    color: var(--laranja-claro);
+
+    font-size: 0.94rem;
+}
+
+.noticia-destaque h2 {
+
+    margin: 0;
+
+    font-size: clamp(1.45rem, 2.4vw, 2rem);
+
+    font-weight: 650;
+}
+
+.noticia-secundaria h3 {
+
+    margin: 0;
+
+    font-size: 1.15rem;
+    font-weight: 620;
+}
+
+
+/* ================================================================
+   9. CONTROLES DO CARROSSEL
+   ================================================================ */
+
+.carousel-noticias {
+    position: relative;
+}
+
+.controle-noticias {
+
+    width: auto;
+
+    opacity: 1;
+}
+
+.carousel-control-prev.controle-noticias {
+    left: -58px;
+}
+
+.carousel-control-next.controle-noticias {
+    right: -58px;
+}
+
+.controle-circulo {
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--branco);
+
+    color: var(--verde-principal);
+
+    box-shadow:
+        0 4px 16px rgba(0, 0, 0, 0.15);
+
+    font-size: 1.25rem;
+}
+
+.controle-circulo:hover {
+
+    transform: scale(1.08);
+
+    background: var(--verde-principal);
+
+    color: var(--branco);
+}
+
+
+/* ================================================================
+   10. CARROSSEL MOBILE
+   ================================================================ */
+
+.noticia-mobile {
+
+    height: 430px;
+
+    border-radius: 12px;
+}
+
+.noticia-mobile h2 {
+
+    margin: 0;
+
+    font-size: 1.6rem;
+}
+
+.carousel-indicators [data-bs-target] {
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+}
+
+
+/* ================================================================
+   11. RODAPÉ
+   ================================================================ */
+
+.rodape {
+
+    margin-top: 65px;
+
+    padding:
+        38px
+        0
+        24px;
+
+    background: var(--verde-muito-escuro);
+
+    color: rgba(255, 255, 255, 0.82);
+
+    border-top: 4px solid var(--laranja);
+}
+
+.rodape-marca {
+
+    margin-bottom: 5px;
+
+    color: var(--branco);
+
+    font-size: 1.25rem;
+    font-weight: 750;
+}
+
+.rodape p {
+    font-size: 0.87rem;
+}
+
+.rodape-tcc {
+    color: rgba(255, 255, 255, 0.60);
+}
+
+.link-administracao {
+
+    display: inline-flex;
+    align-items: center;
+
+    padding:
+        9px
+        14px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.32);
+
+    border-radius: 8px;
+
+    color: var(--branco);
+
+    text-decoration: none;
+
+    font-size: 0.85rem;
+}
+
+.link-administracao:hover {
+
+    color: var(--branco);
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border-color: var(--laranja);
+}
+
+.rodape-divisor {
+
+    height: 1px;
+
+    margin:
+        28px
+        0
+        16px;
+
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.rodape-final {
+
+    display: flex;
+    justify-content: space-between;
+
+    color: rgba(255, 255, 255, 0.48);
+
+    font-size: 0.75rem;
+}
+
+
+/* ================================================================
+   12. PÁGINA DE NOTÍCIAS
+   ================================================================ */
+
+.busca-noticias .form-control {
+
+    height: 48px;
+
+    border: 1px solid #adb5bd;
+    border-right: none;
+
+    border-radius: 12px 0 0 12px;
+
+    box-shadow: none;
+}
+
+.busca-noticias .form-control:focus {
+    border-color: var(--verde-principal);
+}
+
+.btn-busca {
+
+    width: 52px;
+
+    border:
+        1px solid
+        var(--verde-principal);
+
+    border-left: none;
+
+    border-radius: 0 12px 12px 0;
+
+    background: var(--branco);
+
+    color: var(--verde-principal);
+
+    font-size: 1.4rem;
+}
+
+.btn-busca:hover {
+
+    background: var(--verde-principal);
+
+    color: var(--branco);
+}
+
+.texto-busca {
+    color: var(--texto-suave);
+}
+
+.link-limpar-busca {
+    color: var(--verde-principal);
+}
+
+.lista-noticias {
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 22px;
+}
+
+.card-noticia-lista {
+
+    overflow: hidden;
+
+    border-radius: 14px;
+
+    background: var(--branco);
+
+    box-shadow:
+        0 5px 20px
+        rgba(0, 0, 0, 0.07);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.card-noticia-lista:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 30px
+        rgba(0, 0, 0, 0.10);
+}
+
+.imagem-noticia-lista {
+
+    width: 100%;
+    height: 210px;
+}
+
+.imagem-noticia-lista img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.conteudo-noticia-lista {
+
+    min-height: 210px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 18px 22px;
+}
+
+.data-noticia-lista {
+
+    color: var(--laranja);
+
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.conteudo-noticia-lista h2 {
+
+    margin:
+        2px
+        0
+        7px;
+
+    color: var(--verde-principal);
+
+    font-size: 1.35rem;
+}
+
+.conteudo-noticia-lista p {
+
+    max-width: 720px;
+
+    margin: 0;
+
+    line-height: 1.5;
+
+    color: #444;
+}
+
+.rodape-card-noticia {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 12px;
+
+    color: var(--texto-suave);
+
+    font-size: 0.85rem;
+}
+
+.rodape-card-noticia a {
+
+    color: var(--verde-principal);
+
+    text-decoration: none;
+
+    font-weight: 600;
+}
+
+
+/* ================================================================
+   13. LISTA DE ESPORTES
+   ================================================================ */
+
+.card-esporte {
+
+    position: relative;
+
+    display: block;
+
+    height: 300px;
+
+    overflow: hidden;
+
+    border-radius: 14px;
+
+    background: #222;
+
+    box-shadow: var(--sombra);
+
+    text-decoration: none;
+}
+
+.card-esporte img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.45s ease;
+}
+
+.card-esporte:hover img {
+    transform: scale(1.055);
+}
+
+.overlay-esporte {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.76) 0%,
+            rgba(0, 0, 0, 0) 48%
+        );
+}
+
+.nome-esporte {
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding:
+        18px
+        20px;
+
+    color: var(--branco);
+
+    font-size: 1.55rem;
+    font-weight: 600;
+}
+
+.nome-esporte i {
+
+    opacity: 0;
+
+    transform:
+        translate(-6px, 6px);
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
+}
+
+.card-esporte:hover .nome-esporte i {
+
+    opacity: 1;
+
+    transform:
+        translate(0, 0);
+}
+
+
+/* ================================================================
+   14. PÁGINA INDIVIDUAL DO ESPORTE
+   ================================================================ */
+
+.banner-esporte {
+
+    position: relative;
+
+    height: 370px;
+
+    overflow: hidden;
+
+    border-radius: 16px;
+
+    background: #222;
+
+    box-shadow: var(--sombra);
+}
+
+.banner-esporte img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.banner-esporte-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.70),
+            rgba(0, 0, 0, 0.05)
+        );
+}
+
+.banner-esporte-conteudo {
+
+    position: absolute;
+
+    left: 35px;
+    bottom: 32px;
+
+    color: var(--branco);
+}
+
+.banner-esporte-conteudo h1 {
+
+    margin: 8px 0 0;
+
+    font-size:
+        clamp(
+            2rem,
+            5vw,
+            3.5rem
+        );
+
+    font-weight: 750;
+}
+
+.voltar-esportes {
+
+    display: inline-flex;
+    align-items: center;
+
+    gap: 6px;
+
+    color: rgba(255, 255, 255, 0.85);
+
+    text-decoration: none;
+}
+
+.voltar-esportes:hover {
+    color: var(--laranja);
+}
+
+.card-info-esporte {
+
+    height: 100%;
+    min-height: 300px;
+
+    padding:
+        20px;
+
+    border:
+        1px solid
+        var(--borda);
+
+    border-radius: 14px;
+
+    background: var(--branco);
+
+    box-shadow:
+        0 4px 18px
+        rgba(0, 0, 0, 0.06);
+}
+
+.card-info-esporte h2 {
+
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    margin:
+        0
+        0
+        20px;
+
+    color: var(--verde-principal);
+
+    font-size: 1.05rem;
+    font-weight: 750;
+
+    text-transform: uppercase;
+}
+
+.card-info-esporte h2 > span {
+
+    display: block;
+
+    width: 8px;
+    height: 23px;
+
+    flex-shrink: 0;
+
+    border-radius: 5px;
+
+    background: var(--laranja);
+}
+
+.texto-sobre-esporte {
+
+    color: var(--verde-principal);
+
+    line-height: 1.55;
+}
+
+.conquista-esporte {
+
+    display: flex;
+    align-items: flex-start;
+
+    gap: 16px;
+
+    color: var(--verde-principal);
+}
+
+.conquista-esporte > i {
+    font-size: 3rem;
+}
+
+.lista-info-treino {
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 21px;
+}
+
+.item-info-treino {
+
+    display: flex;
+    align-items: center;
+
+    gap: 16px;
+
+    color: var(--verde-principal);
+}
+
+.item-info-treino > i {
+
+    width: 40px;
+
+    flex-shrink: 0;
+
+    text-align: center;
+
+    font-size: 2rem;
+}
+
+.item-info-treino div {
+
+    display: flex;
+    flex-direction: column;
+}
+
+.item-info-treino strong {
+
+    font-size: 0.8rem;
+
+    color: var(--texto-suave);
+
+    font-weight: 500;
+}
+
+.item-info-treino span {
+
+    line-height: 1.25;
+
+    color: var(--verde-principal);
+}
+
+.sem-informacao {
+    color: var(--texto-suave);
+}
+
+
+/* ================================================================
+   15. PÁGINA INDIVIDUAL DA NOTÍCIA
+   ================================================================ */
+
+.pagina-noticia {
+
+    background:
+        linear-gradient(
+            180deg,
+            #f2f4f3 0%,
+            #ffffff 100%
+        );
+}
+
+.noticia-completa {
+
+    max-width: 980px;
+
+    margin: 0 auto;
+}
+
+.voltar-noticias {
+
+    display: inline-flex;
+    align-items: center;
+
+    gap: 7px;
+
+    margin-bottom: 28px;
+
+    color: var(--verde-principal);
+
+    text-decoration: none;
+
+    font-weight: 600;
+}
+
+.voltar-noticias:hover {
+    color: var(--laranja);
+}
+
+.cabecalho-noticia-completa {
+
+    max-width: 900px;
+
+    margin-bottom: 28px;
+}
+
+.cabecalho-noticia-completa h1 {
+
+    margin:
+        6px
+        0
+        14px;
+
+    color: var(--verde-principal);
+
+    font-size:
+        clamp(
+            2rem,
+            5vw,
+            3.4rem
+        );
+
+    line-height: 1.08;
+
+    font-weight: 780;
+}
+
+.subtitulo-noticia-completa {
+
+    max-width: 820px;
+
+    margin:
+        0
+        0
+        18px;
+
+    color: var(--texto-suave);
+
+    font-size: 1.15rem;
+
+    line-height: 1.5;
+}
+
+.meta-noticia {
+
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 18px;
+
+    color: var(--texto-suave);
+
+    font-size: 0.9rem;
+}
+
+.meta-noticia span {
+
+    display: inline-flex;
+    align-items: center;
+
+    gap: 6px;
+}
+
+.meta-noticia i {
+    color: var(--laranja);
+}
+
+
+/* Imagem principal */
+
+.imagem-principal-noticia {
+
+    margin:
+        0
+        0
+        38px;
+
+    overflow: hidden;
+
+    border-radius: 16px;
+
+    box-shadow: var(--sombra);
+}
+
+.imagem-principal-noticia img {
+
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    max-height: 560px;
+
+    object-fit: cover;
+}
+
+
+/* Corpo da matéria */
+
+.corpo-noticia {
+
+    max-width: 780px;
+
+    margin: 0 auto;
+
+    color: #303632;
+
+    font-size: 1.06rem;
+
+    line-height: 1.8;
+}
+
+.corpo-noticia p {
+    margin-bottom: 1.5rem;
+}
+
+.corpo-noticia h2 {
+
+    margin:
+        2.5rem
+        0
+        1rem;
+
+    color: var(--verde-principal);
+
+    font-size: 1.7rem;
+
+    font-weight: 720;
+}
+
+.corpo-noticia h3 {
+
+    margin:
+        2rem
+        0
+        0.9rem;
+
+    color: var(--verde-principal);
+
+    font-size: 1.35rem;
+}
+
+.corpo-noticia strong {
+    color: var(--verde-principal);
+}
+
+.corpo-noticia a {
+
+    color: var(--verde-principal);
+
+    text-decoration-color: var(--laranja);
+
+    text-underline-offset: 3px;
+}
+
+
+/* Imagens no meio do texto */
+
+.corpo-noticia img {
+
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    margin:
+        2rem
+        auto;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 7px 25px
+        rgba(0, 0, 0, 0.10);
+}
+
+.corpo-noticia figure {
+
+    width: min(
+        900px,
+        calc(100vw - 40px)
+    );
+
+    margin:
+        2.5rem
+        50%;
+
+    transform:
+        translateX(-50%);
+}
+
+.corpo-noticia figure img {
+    margin: 0;
+}
+
+.corpo-noticia figcaption {
+
+    margin-top: 8px;
+
+    color: var(--texto-suave);
+
+    font-size: 0.82rem;
+
+    text-align: center;
+}
+
+
+/* Citações */
+
+.corpo-noticia blockquote {
+
+    margin:
+        2rem
+        0;
+
+    padding:
+        18px
+        22px;
+
+    border-left:
+        5px solid
+        var(--laranja);
+
+    border-radius:
+        0
+        10px
+        10px
+        0;
+
+    background:
+        #f5f7f5;
+
+    color:
+        var(--verde-principal);
+
+    font-size: 1.08rem;
+}
+
+
+/* Final da notícia */
+
+.fim-noticia {
+
+    max-width: 780px;
+
+    margin:
+        50px
+        auto
+        0;
+}
+
+.linha-fim-noticia {
+
+    height: 1px;
+
+    margin-bottom: 20px;
+
+    background: var(--borda);
+}
+
+.link-voltar-noticias {
+
+    display: inline-flex;
+    align-items: center;
+
+    gap: 7px;
+
+    color: var(--verde-principal);
+
+    text-decoration: none;
+
+    font-weight: 600;
+}
+
+.link-voltar-noticias:hover {
+    color: var(--laranja);
+}
+
+
+/* ================================================================
+   16. ESTADOS VAZIOS E ERROS
+   ================================================================ */
+
+.estado-vazio {
+
+    padding:
+        70px
+        25px;
+
+    text-align: center;
+
+    color: var(--texto-suave);
+}
+
+.estado-vazio > i {
+
+    display: block;
+
+    margin-bottom: 15px;
+
+    color: var(--verde-principal);
+
+    font-size: 3.5rem;
+}
+
+.estado-vazio h2 {
+    color: var(--verde-principal);
+}
+
+.btn-voltar {
+
+    margin-top: 10px;
+
+    background: var(--verde-principal);
+
+    color: var(--branco);
+}
+
+.btn-voltar:hover {
+
+    background: var(--verde-escuro);
+
+    color: var(--branco);
+}
+
+
+/* ================================================================
+   17. TABLETS E TELAS INTERMEDIÁRIAS
+   ================================================================ */
+
+@media (max-width: 1100px) {
+
+    .carousel-control-prev.controle-noticias {
+        left: -20px;
+    }
+
+    .carousel-control-next.controle-noticias {
+        right: -20px;
+    }
+
+}
+
+
+/* ================================================================
+   18. MOBILE
+   ================================================================ */
+
+@media (max-width: 767.98px) {
+
+    body {
+        padding-bottom: 68px;
+    }
+
+    .home {
+        min-height: auto;
+    }
+
+    .home .container {
+
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .cabecalho-secao {
+        align-items: center;
+    }
+
+    .link-ver-todas {
+        font-size: 0.85rem;
+    }
+
+
+    /* Home */
+
+    .noticia-mobile {
+
+        height:
+            min(
+                62vh,
+                470px
+            );
+
+        min-height: 365px;
+    }
+
+    .noticia-overlay {
+
+        padding:
+            65px
+            18px
+            28px;
+    }
+
+
+    /* Notícias */
+
+    .imagem-noticia-lista {
+        height: 220px;
+    }
+
+    .conteudo-noticia-lista {
+        min-height: auto;
+    }
+
+    .rodape-card-noticia {
+
+        align-items: flex-start;
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+
+    /* Esportes */
+
+    .card-esporte {
+        height: 240px;
+    }
+
+
+    /* Página individual do esporte */
+
+    .banner-esporte {
+        height: 280px;
+    }
+
+    .banner-esporte-conteudo {
+
+        left: 20px;
+        bottom: 22px;
+    }
+
+    .card-info-esporte {
+        min-height: auto;
+    }
+
+
+    /* Página individual da notícia */
+
+    .cabecalho-noticia-completa h1 {
+        font-size: 2rem;
+    }
+
+    .subtitulo-noticia-completa {
+        font-size: 1rem;
+    }
+
+    .imagem-principal-noticia {
+
+        margin-bottom: 28px;
+
+        border-radius: 12px;
+    }
+
+    .corpo-noticia {
+
+        font-size: 1rem;
+
+        line-height: 1.7;
+    }
+
+    .corpo-noticia figure {
+
+        width: 100%;
+
+        margin:
+            2rem
+            0;
+
+        transform: none;
+    }
+
+
+    /* Rodapé */
+
+    .rodape {
+
+        margin-top: 40px;
+
+        padding-bottom: 30px;
+    }
+
+    .rodape-final {
+
+        flex-direction: column;
+
+        gap: 4px;
+    }
+
+}
+
+
+/* ================================================================
+   19. TELAS MUITO PEQUENAS
+   ================================================================ */
+
+@media (max-width: 380px) {
+
+    .nav-mobile span {
+        font-size: 0.67rem;
+    }
+
+    .nav-mobile i {
+        font-size: 1.3rem;
+    }
+
+    .noticia-mobile {
+        min-height: 335px;
+    }
+
+}

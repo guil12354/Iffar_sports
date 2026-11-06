@@ -1,0 +1,56 @@
+/admin
+cadastrar_admin.php
+(!=, set_charset, die, prepare($sql), stmt, bind_param, execute, alert alert-info,
+endif, form-label, class=form-control, btn btn-sucess e secondary)
+
+editar_esporte.php
+(??, !==, ENT_QUOTES, filter_input(), !$id || $id, exit, set_charset, prepare, bind_param,
+get result, close, throw new exception, bin2hex, hash_equals, trim, upload_err_no_file,
+new finfo, getimagesize, dir, mkdir, move_uploaded_file, null, is_file, unlink,
+throwable, catch, http_response_code, btn btn-outline-success, bi bi-arrow-left me-1,
+enctype, endforeach, const, let, change, preview,src, removeattribute)
+
+editar_noticia.php
+(ini_set, error reporting, !is_dir, unlink, getmessage(), !empty, 
+
+equipe.php
+(INPUT_GET, FILTER_VALIDATE_INT, static fn, $eqh, $eqdb, strip_tags, preg_replace, $safe)
+
+equipes_do_esporte.php
+(anteriores)
+
+equipescrud.php
+(!hash_equals, strip_tags, preg_replace, mb_strlen, commit, rollback,document.getElementById('editor')),
+
+esportescrud.php
+(UPLOAD_ERR_OK, FILEINFO_MIME_TYPE, filter_var, endwhile, getElementById, addEventListener,
+revokeObjectURL)
+
+index.php
+(error_log, getMessage())
+
+noticiascrud.php
+(anteriores)
+
+
+/css
+admin.css
+(tudo)
+
+/include
+foot.php
+(bootstrap)
+
+head.php
+(endif, htmlspecialchars, ??, bootstrap icons)
+
+nav.php
+(??, sidebar, brand-mark, bi bi-trophy-fill, strong, small, button,
+i class, ===, ?, :, topbar, htmlspecialchars)
+
+/js
+admin.js
+(tudo)
+
+
+

@@ -1,0 +1,1081 @@
+:root {
+    --green: #005126;
+    --green-dark: #003b1b;
+    --green-soft: #eaf4ee;
+    --orange: #f5a623;
+    --bg: #f4f6f5;
+    --white: #ffffff;
+    --text: #1e2923;
+    --muted: #748078;
+    --border: #dce4df;
+    --danger: #b42318;
+    --sidebar: 260px;
+    --shadow: 0 8px 28px rgba(19, 48, 31, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+    position: fixed;
+    inset: 0 auto 0 0;
+    width: var(--sidebar);
+    background: var(--green-dark);
+    color: #fff;
+    z-index: 1040;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-brand {
+    min-height: 88px;
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.brand-mark {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: var(--orange);
+    display: grid;
+    place-items: center;
+    color: var(--green-dark);
+    font-size: 1.35rem;
+    flex-shrink: 0;
+}
+
+.sidebar-brand strong,
+.sidebar-brand small {
+    display: block;
+}
+
+.sidebar-brand strong {
+    font-size: 0.95rem;
+}
+
+.sidebar-brand small {
+    opacity: 0.65;
+    font-size: 0.75rem;
+}
+
+.btn-close-sidebar {
+    margin-left: auto;
+    border: 0;
+    background: transparent;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.sidebar-nav {
+    padding: 20px 12px;
+    flex: 1;
+}
+
+.sidebar-nav a,
+.sidebar-footer a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    border-radius: 10px;
+    color: rgba(255, 255, 255, 0.78);
+    text-decoration: none;
+    margin-bottom: 5px;
+}
+
+.sidebar-nav a i,
+.sidebar-footer a i {
+    font-size: 1.15rem;
+}
+
+.sidebar-nav a:hover,
+.sidebar-nav a.active {
+    background: rgba(255, 255, 255, 0.11);
+    color: #fff;
+}
+
+.sidebar-nav a.active {
+    box-shadow: inset 3px 0 var(--orange);
+}
+
+.nav-caption {
+    padding: 18px 14px 7px;
+    color: rgba(255, 255, 255, 0.38);
+    font-size: 0.67rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.sidebar-footer {
+    padding: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+/* =========================
+   TOPBAR
+========================= */
+
+.topbar {
+    position: fixed;
+    left: var(--sidebar);
+    right: 0;
+    top: 0;
+    height: 76px;
+    background: #fff;
+    border-bottom: 1px solid var(--border);
+    z-index: 1030;
+    display: flex;
+    align-items: center;
+    padding: 0 32px;
+}
+
+.topbar > div:first-of-type strong,
+.topbar > div:first-of-type small {
+    display: block;
+}
+
+.topbar > div:first-of-type strong {
+    color: var(--green);
+    font-size: 0.95rem;
+}
+
+.topbar > div:first-of-type small {
+    font-size: 0.76rem;
+    color: var(--muted);
+}
+
+.topbar-user {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+
+.user-text {
+    text-align: right;
+}
+
+.user-text strong,
+.user-text span {
+    display: block;
+    font-size: 0.8rem;
+}
+
+.user-text span {
+    color: var(--muted);
+    font-size: 0.72rem;
+}
+
+.avatar {
+    width: 39px;
+    height: 39px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: var(--green-soft);
+    color: var(--green);
+    font-size: 1.2rem;
+}
+
+.menu-toggle {
+    border: 0;
+    background: transparent;
+    color: var(--green);
+    font-size: 1.7rem;
+    margin-right: 12px;
+}
+
+
+/* =========================
+   CONTEÚDO
+========================= */
+
+.admin-main {
+    margin-left: var(--sidebar);
+    padding: 108px 32px 45px;
+    min-height: 100vh;
+}
+
+.page-heading,
+.welcome-panel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 26px;
+}
+
+.page-heading h1,
+.welcome-panel h1 {
+    margin: 3px 0 5px;
+    font-size: 2rem;
+    font-weight: 750;
+    color: var(--green);
+}
+
+.page-heading p,
+.welcome-panel p {
+    margin: 0;
+    color: var(--muted);
+}
+
+.eyebrow {
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    color: var(--orange);
+    font-weight: 800;
+}
+
+.back-link {
+    display: inline-flex;
+    gap: 6px;
+    color: var(--green);
+    text-decoration: none;
+    font-size: 0.85rem;
+    margin-bottom: 5px;
+}
+
+
+/* =========================
+   BOTÕES
+========================= */
+
+.btn-brand {
+    background: var(--green);
+    border-color: var(--green);
+    color: #fff;
+}
+
+.btn-brand:hover {
+    background: var(--green-dark);
+    border-color: var(--green-dark);
+    color: #fff;
+}
+
+.btn-outline-brand {
+    border: 1px solid var(--green);
+    color: var(--green);
+    background: #fff;
+}
+
+.btn-outline-brand:hover {
+    background: var(--green);
+    color: #fff;
+}
+
+.quick-actions {
+    display: flex;
+    gap: 10px;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.stat-card,
+.panel {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+}
+
+.stat-card {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    height: 100%;
+}
+
+.stat-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: var(--green-soft);
+    color: var(--green);
+    display: grid;
+    place-items: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+}
+
+.stat-card strong,
+.stat-card span,
+.stat-card small {
+    display: block;
+}
+
+.stat-card strong {
+    font-size: 1.15rem;
+    color: var(--green);
+}
+
+.stat-card span {
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+
+.stat-card small {
+    font-size: 0.7rem;
+    color: var(--muted);
+}
+
+.panel {
+    overflow: hidden;
+}
+
+.panel-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 22px 14px;
+}
+
+.panel-heading h2 {
+    font-size: 1rem;
+    margin: 0;
+    color: var(--green);
+}
+
+.panel-heading p {
+    margin: 3px 0 0;
+    font-size: 0.76rem;
+    color: var(--muted);
+}
+
+.panel-heading > a {
+    font-size: 0.8rem;
+    color: var(--green);
+    text-decoration: none;
+}
+
+
+/* =========================
+   TABELA
+========================= */
+
+.admin-table {
+    margin: 0;
+}
+
+.admin-table thead th {
+    background: #f8faf9;
+    color: var(--muted);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom-color: var(--border);
+    padding: 12px 20px;
+}
+
+.admin-table td {
+    padding: 15px 20px;
+    border-color: #edf1ef;
+    font-size: 0.84rem;
+    vertical-align: middle;
+}
+
+.admin-table tbody tr:hover {
+    background: #fafcfb;
+}
+
+
+/* =========================
+   TAGS E STATUS
+========================= */
+
+.tag {
+    background: var(--green-soft);
+    color: var(--green);
+    padding: 5px 9px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 650;
+}
+
+.status {
+    padding: 5px 9px;
+    border-radius: 20px;
+    font-size: 0.68rem;
+    font-weight: 700;
+}
+
+.status.published {
+    background: #e7f6ed;
+    color: #16733a;
+}
+
+.status.draft {
+    background: #fff4dc;
+    color: #8c5c00;
+}
+
+
+/* =========================
+   ACESSO RÁPIDO
+========================= */
+
+.action-list {
+    padding: 0 14px 15px;
+}
+
+.action-list a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 8px;
+    border-bottom: 1px solid #edf1ef;
+    color: var(--text);
+    text-decoration: none;
+}
+
+.action-list a:last-child {
+    border-bottom: 0;
+}
+
+.action-list a:hover {
+    background: #fafcfb;
+}
+
+.action-list a > i:first-child {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: var(--green-soft);
+    display: grid;
+    place-items: center;
+    color: var(--green);
+    flex-shrink: 0;
+}
+
+.action-list a > i:last-child {
+    margin-left: auto;
+    color: #9ba59f;
+}
+
+.action-list strong,
+.action-list span {
+    display: block;
+}
+
+.action-list strong {
+    font-size: 0.82rem;
+}
+
+.action-list span {
+    font-size: 0.72rem;
+    color: var(--muted);
+}
+
+
+/* =========================
+   FERRAMENTAS
+========================= */
+
+.toolbar {
+    padding: 18px 20px;
+    display: flex;
+    gap: 12px;
+    border-bottom: 1px solid var(--border);
+}
+
+.toolbar .form-select {
+    max-width: 220px;
+}
+
+.search-box {
+    position: relative;
+    flex: 1;
+    max-width: 420px;
+}
+
+.search-box i {
+    position: absolute;
+    left: 13px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--muted);
+}
+
+.search-box input {
+    width: 100%;
+    height: 40px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    padding: 0 12px 0 38px;
+    outline: none;
+}
+
+.search-box input:focus {
+    border-color: var(--green);
+}
+
+
+/* =========================
+   TÍTULOS
+========================= */
+
+.title-cell {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+
+.thumb-placeholder,
+.sport-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 9px;
+    background: var(--green-soft);
+    color: var(--green);
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
+}
+
+.sport-icon {
+    font-size: 1.25rem;
+}
+
+
+/* =========================
+   BOTÕES DE ÍCONE
+========================= */
+
+.icon-btn {
+    width: 34px;
+    height: 34px;
+    border: 1px solid var(--border);
+    background: #fff;
+    border-radius: 8px;
+    display: inline-grid;
+    place-items: center;
+    color: var(--green);
+    text-decoration: none;
+    margin-left: 4px;
+}
+
+.icon-btn:hover {
+    background: var(--green-soft);
+}
+
+.icon-btn.danger {
+    color: var(--danger);
+}
+
+
+/* =========================
+   FORMULÁRIOS
+========================= */
+
+.form-panel {
+    padding: 24px;
+    margin-bottom: 22px;
+    overflow: visible;
+}
+
+.section-title {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    margin-bottom: 22px;
+}
+
+.section-title > span {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--orange);
+    color: var(--green-dark);
+    display: grid;
+    place-items: center;
+    font-weight: 800;
+    flex: 0 0 auto;
+}
+
+.section-title h2 {
+    font-size: 1.05rem;
+    color: var(--green);
+    margin: 1px 0 3px;
+}
+
+.section-title h2 small {
+    font-size: 0.65rem;
+    color: var(--muted);
+    font-weight: 500;
+}
+
+.section-title p {
+    font-size: 0.76rem;
+    color: var(--muted);
+    margin: 0;
+}
+
+.form-label {
+    font-size: 0.76rem;
+    font-weight: 650;
+    color: #465149;
+}
+
+.form-control,
+.form-select {
+    border-color: var(--border);
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--green);
+    box-shadow: 0 0 0 0.2rem rgba(0, 81, 38, 0.08);
+}
+
+
+/* =========================
+   UPLOAD
+========================= */
+
+.upload-box {
+    border: 2px dashed #b9c9bf;
+    border-radius: 13px;
+    padding: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    cursor: pointer;
+    background: #fbfcfb;
+}
+
+.upload-box input {
+    display: none;
+}
+
+.upload-box i {
+    font-size: 2rem;
+    color: var(--green);
+}
+
+.upload-box strong,
+.upload-box span {
+    display: block;
+}
+
+.upload-box span {
+    font-size: 0.72rem;
+    color: var(--muted);
+}
+
+
+/* =========================
+   EDITOR
+========================= */
+
+.wysiwyg {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.wysiwyg-toolbar {
+    display: flex;
+    gap: 3px;
+    padding: 8px;
+    background: #f7f9f8;
+    border-bottom: 1px solid var(--border);
+}
+
+.wysiwyg-toolbar button {
+    width: 34px;
+    height: 32px;
+    border: 0;
+    border-radius: 6px;
+    background: transparent;
+    color: #425047;
+}
+
+.wysiwyg-toolbar button:hover {
+    background: #e7eee9;
+}
+
+.wysiwyg-area {
+    min-height: 220px;
+    padding: 18px;
+    outline: none;
+}
+
+.wysiwyg-area p {
+    color: #69736d;
+}
+
+
+/* =========================
+   GALERIAS E LISTAS
+========================= */
+
+.gallery-add,
+.dynamic-form {
+    display: flex;
+    align-items: end;
+    gap: 10px;
+    padding: 15px;
+    background: #f8faf9;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin-bottom: 16px;
+}
+
+.gallery-add > div {
+    flex: 1;
+}
+
+.gallery-add .btn,
+.dynamic-form .btn {
+    height: 38px;
+    white-space: nowrap;
+}
+
+.sport-gallery-add > div:nth-child(3) {
+    flex: 1.3;
+}
+
+.gallery-list,
+.sortable-list {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.gallery-item,
+.sortable-item {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 11px;
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    background: #fff;
+}
+
+.gallery-preview {
+    width: 76px;
+    height: 56px;
+    border-radius: 8px;
+    background: var(--green-soft);
+    color: var(--green);
+    display: grid;
+    place-items: center;
+    font-size: 1.4rem;
+}
+
+.gallery-info {
+    flex: 1;
+}
+
+.gallery-info strong,
+.gallery-info span,
+.sortable-item strong,
+.sortable-item span {
+    display: block;
+}
+
+.gallery-info strong,
+.sortable-item strong {
+    font-size: 0.82rem;
+}
+
+.gallery-info span,
+.sortable-item span {
+    font-size: 0.72rem;
+    color: var(--muted);
+}
+
+.reorder {
+    display: flex;
+    gap: 4px;
+}
+
+.reorder button {
+    width: 31px;
+    height: 31px;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    background: #fff;
+    color: var(--green);
+}
+
+.reorder button.remove {
+    color: var(--danger);
+}
+
+
+/* =========================
+   MEDALHAS E TREINAMENTOS
+========================= */
+
+.medal,
+.list-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.medal.gold {
+    background: #fff4cf;
+    color: #9b7100;
+}
+
+.medal.silver {
+    background: #eef1f3;
+    color: #66717a;
+}
+
+.medal.bronze {
+    background: #f5e8de;
+    color: #8b542f;
+}
+
+.list-icon {
+    background: var(--green-soft);
+    color: var(--green);
+}
+
+.conquest-form #conquestYear {
+    max-width: 100px;
+}
+
+.conquest-form select {
+    max-width: 140px;
+}
+
+.training-form > * {
+    min-width: 0;
+}
+
+
+/* =========================
+   FUNDO DO MENU MOBILE
+========================= */
+
+.sidebar-backdrop {
+    display: none;
+}
+
+
+/* =========================
+   TABLET / MOBILE
+========================= */
+
+@media (max-width: 991.98px) {
+
+    .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.25s ease;
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    .sidebar-backdrop {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.35);
+        z-index: 1035;
+    }
+
+    .sidebar-backdrop.show {
+        display: block;
+    }
+
+    .topbar {
+        left: 0;
+        padding: 0 18px;
+    }
+
+    .admin-main {
+        margin-left: 0;
+        padding: 100px 18px 35px;
+    }
+
+    .page-heading,
+    .welcome-panel {
+        align-items: flex-start;
+    }
+
+    .dynamic-form,
+    .gallery-add {
+        flex-wrap: wrap;
+    }
+
+    .dynamic-form > * {
+        flex: 1 1 180px;
+    }
+
+    .gallery-add > div {
+        flex: 1 1 240px;
+    }
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 575.98px) {
+
+    .topbar-user .user-text {
+        display: none;
+    }
+
+    .page-heading,
+    .welcome-panel {
+        flex-direction: column;
+    }
+
+    .quick-actions {
+        width: 100%;
+    }
+
+    .quick-actions .btn {
+        flex: 1;
+    }
+
+    .page-heading > .btn,
+    .page-heading > div:last-child {
+        width: 100%;
+    }
+
+    .page-heading > div:last-child {
+        display: flex;
+    }
+
+    .page-heading > div:last-child .btn {
+        flex: 1;
+    }
+
+    .admin-main {
+        padding-left: 13px;
+        padding-right: 13px;
+    }
+
+    .form-panel {
+        padding: 17px;
+    }
+
+    .toolbar {
+        flex-direction: column;
+    }
+
+    .toolbar .form-select,
+    .search-box {
+        max-width: none;
+        width: 100%;
+    }
+
+    .gallery-item,
+    .sortable-item {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .reorder {
+        margin-left: auto;
+    }
+
+    .admin-table td,
+    .admin-table thead th {
+        padding-left: 13px;
+        padding-right: 13px;
+    }
+
+}
+
+/* Imagens da tabela de esportes */
+table img {
+    width: 80px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
+}
+
+/* Alinhamento das linhas */
+table td {
+    vertical-align: middle;
+}
+
+/* Indicadores do Dashboard */
+.dashboard-count {
+    font-size: 30px;
+    font-weight: 700;
+    color: #00552e;
+    margin: 8px 0;
+    line-height: 1.2;
+}
+
+.stat-card {
+    min-height: 150px;
+    align-items: center;
+}
+
+.stat-card .stat-icon {
+    flex-shrink: 0;
+}
+
+.admin-main .crud-topo{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:20px}
+.admin-main .crud-topo h1{font-size:2rem!important;font-weight:650!important;line-height:1.25!important;color:#1e2923!important;margin:0 0 6px!important}
+.admin-main .crud-topo p{font-size:14px!important;color:#748078!important;margin:0!important}
+.admin-main .crud-acoes{display:flex;justify-content:flex-end;margin:0 0 18px}
+.admin-main .crud-btn-primary,.admin-main .btn-brand,.admin-main .btn-verde,.admin-main .btn-green{display:inline-flex;align-items:center;justify-content:center;gap:6px;background:#087c45!important;color:#fff!important;border:1px solid #087c45!important;border-radius:7px!important;padding:9px 15px!important;font-size:14px!important;font-weight:500!important;text-decoration:none!important;line-height:1.3!important}
+.admin-main .crud-btn-primary:hover,.admin-main .btn-brand:hover,.admin-main .btn-verde:hover,.admin-main .btn-green:hover{background:#005126!important;border-color:#005126!important}
+.admin-main .crud-btn-outline,.admin-main .btn-outline-brand{display:inline-flex;align-items:center;gap:6px;border:1px solid #087c45!important;color:#087c45!important;background:transparent!important;border-radius:7px!important;padding:9px 14px!important;font-size:14px!important;text-decoration:none!important}
+.admin-main .crud-btn-outline:hover,.admin-main .btn-outline-brand:hover{background:#eaf4ee!important}
+.admin-main .painel,.admin-main .panel{background:#fff!important;border:1px solid #dce4df!important;border-radius:12px!important;margin:0 0 24px!important;padding:0!important;overflow:hidden!important;box-shadow:none!important}
+.admin-main .painel-titulo,.admin-main .panel-head{padding:17px 20px!important;border-bottom:1px solid #e9eeea!important;font-weight:700!important;font-size:14px!important;color:#005126!important;background:#fff!important;margin:0!important}
+.admin-main .panel-head h2{font-size:14px!important;font-weight:700!important;margin:0!important;color:#005126!important}
+.admin-main .painel-corpo,.admin-main .panel-body{padding:24px!important}
+.admin-main .painel .table,.admin-main .panel .table{width:100%;margin:0!important;font-size:14px!important;vertical-align:middle!important}
+.admin-main .painel .table thead th{background:#fff!important;color:#1e2923!important;font-size:13px!important;font-weight:700!important;padding:13px 12px!important;border-bottom:1px solid #dce4df!important;white-space:nowrap}
+.admin-main .painel .table tbody td{padding:11px 12px!important;vertical-align:middle!important;border-color:#e4ebe7!important}
+.admin-main .painel .table tbody tr:hover{background:#f7faf8!important}
+.admin-main .painel .table td:last-child,.admin-main .painel .table th:last-child{min-width:155px}
+.admin-main .painel .table td:last-child .d-flex{align-items:center;flex-wrap:nowrap!important}
+.admin-main .painel .table .btn-sm{display:inline-flex!important;align-items:center;justify-content:center;gap:5px;font-size:12px!important;min-height:31px!important;padding:5px 9px!important;border-radius:5px!important;white-space:nowrap!important}
+.admin-main .painel .table .btn-warning{background:#ffbf00!important;border-color:#ffbf00!important;color:#161616!important}
+.admin-main .painel .table .btn-danger{background:#dc3545!important;border-color:#dc3545!important;color:#fff!important}
+.admin-main .capa,.admin-main .sport-img,.admin-main .thumb{width:75px!important;height:55px!important;object-fit:cover!important;border-radius:7px!important}
+.admin-main .categoria{background:#eaf4ee!important;color:#005126!important;border-radius:20px!important;padding:5px 10px!important;font-size:12px!important}
+.admin-main .form-label{font-weight:600;font-size:13px;color:#33433a}
+.admin-main .form-control,.admin-main .form-select{border-color:#dce4df;border-radius:7px}
+.admin-main .form-control:focus,.admin-main .form-select:focus{border-color:#087c45;box-shadow:0 0 0 .2rem rgba(8,124,69,.12)}
+.admin-main #preview{display:none;max-width:170px;max-height:120px;margin-top:12px;border-radius:8px}
+.admin-main .crud-form-actions{display:flex;justify-content:flex-end;gap:10px;flex-wrap:wrap;margin-top:18px}
+.admin-main .editor-equipes{margin-bottom:28px;clear:both}
+.admin-main .ql-container{height:auto!important;min-height:180px}
+.admin-main .ql-editor{min-height:180px;max-height:380px;overflow-y:auto}
+.admin-main .elenco-equipes{clear:both;padding-top:20px;border-top:1px solid #e2e9e5;margin-top:24px}
+@media(max-width:767px){.admin-main .crud-topo h1{font-size:1.55rem!important}.admin-main .painel-corpo,.admin-main .panel-body{padding:16px!important}.admin-main .painel .table{min-width:690px}}
